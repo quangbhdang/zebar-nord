@@ -4,22 +4,22 @@
 @import "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css";
 
 :root {
-  --rp-base: #191724;
-  --rp-base-alpha-bg: #191724;
-  --rp-surface: #1f1d2e;
-  --rp-overlay: #26233a;
-  --rp-muted: #6e6a86;
-  --rp-subtle: #908caa;
-  --rp-text: #e0def4;
-  --rp-love: #eb6f92;
-  --rp-gold: #f6c177;
-  --rp-rose: #ebbcba;
-  --rp-pine: #31748f;
-  --rp-foam: #9ccfd8;
-  --rp-iris: #c4a7e7;
-  --rp-highlight-low: #21202e;
-  --rp-highlight-med: #403d52;
-  --rp-highlight-high: #524f67;
+  --rp-base: #0a1a14;
+  --rp-base-alpha-bg: #0a1a14;
+  --rp-surface: #0f1f18;
+  --rp-overlay: #162c22;
+  --rp-muted: #567a6a;
+  --rp-subtle: #7a9e8a;
+  --rp-text: #d4ffeb;
+  --rp-love: #5eead4;
+  --rp-gold: #6ee7b7;
+  --rp-rose: #a7f3d0;
+  --rp-pine: #2dd4bf;
+  --rp-foam: #5eead4;
+  --rp-iris: #86efac;
+  --rp-highlight-low: #14261c;
+  --rp-highlight-med: #1f3a2c;
+  --rp-highlight-high: #2a4d3a;
 
   --rp-moon-base: #232136;
   --rp-moon-base-alpha-bg: #232136;

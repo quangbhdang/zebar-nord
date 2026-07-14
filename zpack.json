@@ -1,18 +1,21 @@
 {
   "$schema": "https://github.com/glzr-io/zebar/raw/v3.0.0/resources/zpack-schema.json",
-  "name": "zebar-rose-pine-pp",
-  "version": "2.1.0",
-  "description": "A fully featured topbar derived from the Rosé Pine theme",
+  "name": "rose-pine-aqua",
+  "version": "1.0.0",
+  "description": "Rosé Pine topbar with green-aqua nature colors — clickable monitoring widgets open btm system monitor",
   "tags": [
     "topbar",
     "glazewm",
-    "rose-pine"
+    "rose-pine",
+    "aqua",
+    "green",
+    "nature"
   ],
   "previewImages": [
     "./resources/preview-image-1.png",
     "./resources/preview-image-2.png"
   ],
-  "repositoryUrl": "https://github.com/m4rshe1/zebar-rose-pine-pp",
+  "repositoryUrl": "https://github.com/mtico/zebar-rose-pine-aqua",
   "widgets": [
     {
       "name": "glazewm",

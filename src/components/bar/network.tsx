@@ -4,7 +4,7 @@ import { Show, createEffect, createSignal } from "solid-js";
 import { useProviders } from "../../lib/providers-context";
 
 function Network() {
-  const { network } = useProviders();
+  const { network, glazewm } = useProviders();
   const [networkSig, setNetworkSig] = createSignal(network());
   createEffect(() => setNetworkSig(network()));
 
@@ -37,8 +37,9 @@ function Network() {
         class={cn(
           "h-8 flex",
           getNetworkType() === "ethernet" ? "" : "group",
-          "items-center justify-center overflow-hidden gap-2 text-[var(--network)] bg-[var(--network)]/10 rounded-full px-2 relative"
+          "items-center justify-center overflow-hidden gap-2 text-[var(--network)] bg-[var(--network)]/10 rounded-full px-2 relative cursor-pointer"
         )}
+        onClick={() => glazewm()?.runCommand("exec cmd /c start wt btm")}
       >
         <Switch>
           <Match when={getNetworkType() === "ethernet"}>
