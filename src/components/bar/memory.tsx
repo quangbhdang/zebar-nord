@@ -13,7 +13,7 @@ function Memory() {
         class={cn(
           "h-8 flex group items-center justify-center overflow-hidden gap-2 text-[var(--memory)] bg-[var(--memory)]/10 rounded-full pr-3 pl-4 relative cursor-pointer"
         )}
-        onClick={() => glazewm()?.runCommand("exec cmd /c start wt btm")}
+        onClick={() => glazewm()?.runCommand('shell-exec wt "C:\\Program Files\\bottom\\bin\\btm.exe"')}
       >
         <i class="nf nf-fa-memory text-lg"></i>
         <div class="w-12 h-2 bg-[var(--memory)]/40 rounded-full relative overflow-hidden group-hover:translate-y-6 group-hover:opacity-0 transition-all duration-300">
