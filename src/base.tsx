@@ -12,6 +12,7 @@ import Komorebi from "./components/bar/komorebi";
 import { cn } from "./lib/utils";
 import { ProvidersProvider } from "./lib/providers-context";
 import Rss from "./components/bar/rss";
+import Vpn from "./components/bar/vpn";
 
 export interface Layout {
   topMargin: number;
@@ -28,6 +29,7 @@ export interface Layout {
         | "battery"
         | "media"
         | "network"
+        | "vpn"
         | "datetime"
         | "rss"
         | "wm"
@@ -141,6 +143,9 @@ const Base = (props: {
                       </Match>
                       <Match when={component().type === "network"}>
                         <Network />
+                      </Match>
+                      <Match when={component().type === "vpn"}>
+                        <Vpn />
                       </Match>
                       <Match when={component().type === "datetime"}>
                         <Datetime />

@@ -12,8 +12,7 @@
     "minimal"
   ],
   "previewImages": [
-    "./resources/preview-image-1.png",
-    "./resources/preview-image-2.png"
+    "resources\\preview-image.png"
   ],
   "repositoryUrl": "https://github.com/quangbhdang/zebar-nord",
   "widgets": [
@@ -23,7 +22,7 @@
       "zOrder": "normal",
       "shownInTaskbar": false,
       "focused": false,
-      "resizable": true,
+      "resizable": false,
       "transparent": true,
       "includeFiles": [
         "dist/glazewm/*.html",
@@ -35,7 +34,12 @@
         "rules": []
       },
       "privileges": {
-        "shellCommands": []
+        "shellCommands": [
+          {
+            "program": "ipconfig.exe",
+            "argsRegex": ".*"
+          }
+        ]
       },
       "presets": [
         {
@@ -49,7 +53,7 @@
             "type": "all"
           },
           "dockToEdge": {
-            "enabled": false,
+            "enabled": true,
             "edge": null,
             "windowMargin": "0px"
           }
@@ -74,7 +78,12 @@
         "rules": []
       },
       "privileges": {
-        "shellCommands": []
+        "shellCommands": [
+          {
+            "program": "ipconfig.exe",
+            "argsRegex": ".*"
+          }
+        ]
       },
       "presets": [
         {
@@ -113,7 +122,12 @@
         "rules": []
       },
       "privileges": {
-        "shellCommands": []
+        "shellCommands": [
+          {
+            "program": "ipconfig.exe",
+            "argsRegex": ".*"
+          }
+        ]
       },
       "presets": [
         {

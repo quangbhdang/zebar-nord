@@ -39,11 +39,11 @@ function Network() {
           getNetworkType() === "ethernet" ? "" : "group",
           "items-center justify-center overflow-hidden gap-2 text-[var(--network)] bg-[var(--network)]/10 rounded-full px-2 relative cursor-pointer"
         )}
-        onClick={() => glazewm()?.runCommand('shell-exec wt "C:\\Program Files\\bottom\\bin\\btm.exe"')}
+        onClick={() => glazewm()?.runCommand('shell-exec wt "C:/Users/anda3/AppData/Local/Microsoft/WinGet/Links/btop.exe"')}
       >
         <Switch>
           <Match when={getNetworkType() === "ethernet"}>
-            <i class="ti ti-plug text-lg"></i>
+            <i class="nf nf-md-ethernet text-lg"></i>
           </Match>
           <Match when={getNetworkType() === "wifi"}>
             <Switch>

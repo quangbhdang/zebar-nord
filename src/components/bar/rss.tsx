@@ -230,8 +230,15 @@ export default function Rss(props: { options?: { [key: string]: any } }) {
 
   let intervalId: number | undefined;
 
+  const handleStorage = (e: StorageEvent) => {
+    if (e.key === SEEN_STORAGE_KEY) {
+      setSeen(loadSeen());
+    }
+  };
+
   onMount(() => {
     refresh();
+    window.addEventListener("storage", handleStorage);
     intervalId = window.setInterval(
       refresh,
       Math.max(15_000, refreshInterval())
@@ -240,6 +247,7 @@ export default function Rss(props: { options?: { [key: string]: any } }) {
 
   onCleanup(() => {
     if (intervalId) window.clearInterval(intervalId);
+    window.removeEventListener("storage", handleStorage);
   });
 
   createEffect(() => {

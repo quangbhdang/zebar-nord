@@ -48,6 +48,9 @@ const defaultLayout: Layout = {
           type: "network",
         },
         {
+          type: "vpn",
+        },
+        {
           type: "datetime",
         },
       ],
@@ -73,7 +76,7 @@ function App() {
   return (
     <>
       <Show when={rssOpen()}>
-        <RssWindow />
+        <RssWindow wm="komorebi" />
       </Show>
       <Show when={!configOpen() && !rssOpen()}>
         <Base wm="komorebi" layout={layout()} setLayout={setLayout} />

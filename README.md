@@ -20,7 +20,7 @@ A fully featured topbar styled with the beautiful, arctic <a href="https://www.n
 
 - **🎨 Nord Theme**: Beautiful color palette inspired by the popular, arctic Nord theme
 - **🖥️ Multi-Window Manager Support**: Compatible with GlazeWM, Komorebi, and vanilla window managers
-- **📊 System Monitoring**: Real-time CPU, memory, battery, and network statistics
+- **📊 System Monitoring**: Real-time CPU, memory, battery, network, and VPN/Tailscale connection status
 - **🎵 Media Controls**: Integrated media player controls with playback information
 - **🕐 Smart Clock**: Elegant date and time display
 - **⚡ Performance Optimized**: Built with SolidJS for blazing fast performance
@@ -102,7 +102,8 @@ zebar-nord/
 │   │       ├── komorebi.tsx        # Komorebi specific
 │   │       ├── media.tsx           # Media controls
 │   │       ├── memory.tsx          # Memory usage
-│   │       └── network.tsx         # Network status
+│   │       ├── network.tsx         # Network status
+│   │       └── vpn.tsx             # VPN and Tailscale status
 │   ├── glazewm.tsx                 # GlazeWM entry point
 │   ├── komorebi.tsx                # Komorebi entry point
 │   └── vanilla.tsx                 # Vanilla entry point
@@ -132,7 +133,7 @@ The theme uses Tailwind CSS for styling, making it easy to customize colors, spa
 - **Frost** (Accents and active states):
   - `nord7` (`#8fbcbb`): Teal Frost (network status)
   - `nord8` (`#88c0d0`): Ice Blue Frost (primary icons)
-  - `nord9` (`#81a1c1`): Soft Blue Frost (memory usage)
+  - `nord9` (`#81a1c1`): Soft Blue Frost (memory usage and VPN/Tailscale status)
   - `nord10` (`#5e81ac`): Deep Blue Frost (battery status)
 - **Aurora** (Status colors and alerts):
   - `nord11` (`#bf616a`): Red Aurora (high CPU, low battery)

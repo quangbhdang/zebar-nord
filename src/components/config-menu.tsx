@@ -15,6 +15,7 @@ type ComponentType =
   | "battery"
   | "media"
   | "network"
+  | "vpn"
   | "datetime"
   | "rss"
   | "wm"
@@ -68,6 +69,7 @@ export default function ConfigMenu(props: ConfigMenuProps) {
     "battery",
     "media",
     "network",
+    "vpn",
     "datetime",
     "rss",
     "wm",
