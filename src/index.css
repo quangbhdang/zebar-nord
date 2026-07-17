@@ -4,81 +4,67 @@
 @import "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css";
 
 :root {
-  --rp-base: #0a1a14;
-  --rp-base-alpha-bg: #0a1a14;
-  --rp-surface: #0f1f18;
-  --rp-overlay: #162c22;
-  --rp-muted: #567a6a;
-  --rp-subtle: #7a9e8a;
-  --rp-text: #d4ffeb;
-  --rp-love: #5eead4;
-  --rp-gold: #6ee7b7;
-  --rp-rose: #a7f3d0;
-  --rp-pine: #2dd4bf;
-  --rp-foam: #5eead4;
-  --rp-iris: #86efac;
-  --rp-highlight-low: #14261c;
-  --rp-highlight-med: #1f3a2c;
-  --rp-highlight-high: #2a4d3a;
+  /* ==========================================
+     Nord Theme Palette (Official Guide)
+     ========================================== */
 
-  --rp-moon-base: #232136;
-  --rp-moon-base-alpha-bg: #232136;
-  --rp-moon-surface: #2a273f;
-  --rp-moon-overlay: #393552;
-  --rp-moon-muted: #6e6a86;
-  --rp-moon-subtle: #908caa;
-  --rp-moon-text: #e0def4;
-  --rp-moon-love: #eb6f92;
-  --rp-moon-gold: #f6c177;
-  --rp-moon-rose: #ea9a97;
-  --rp-moon-pine: #3e8fb0;
-  --rp-moon-foam: #9ccfd8;
-  --rp-moon-iris: #c4a7e7;
-  --rp-moon-highlight-low: #2a283e;
-  --rp-moon-highlight-med: #44415a;
-  --rp-moon-highlight-high: #56526e;
+  /* Polar Night: Dark background and base colors */
+  --nord-0: #2e3440; /* Base background */
+  --nord-1: #3b4252; /* Elevated panels / widgets bg */
+  --nord-2: #434c5e; /* Borders and selections */
+  --nord-3: #4c566a; /* Muted text / comments / disabled */
 
-  --rp-dawn-base: #faf4ed;
-  --rp-dawn-base-alpha-bg: #faf4ed
-  --rp-dawn-surface: #fffaf3;
-  --rp-dawn-overlay: #f2e9e1;
-  --rp-dawn-muted: #9893a5;
-  --rp-dawn-subtle: #797593;
-  --rp-dawn-text: #575279;
-  --rp-dawn-love: #b4637a;
-  --rp-dawn-gold: #ea9d34;
-  --rp-dawn-rose: #d7827e;
-  --rp-dawn-pine: #286983;
-  --rp-dawn-foam: #56949f;
-  --rp-dawn-iris: #907aa9;
-  --rp-dawn-highlight-low: #f4ede8;
-  --rp-dawn-highlight-med: #dfdad9;
-  --rp-dawn-highlight-high: #cecacd;
+  /* Snow Storm: Text and bright typography */
+  --nord-4: #d8dee9; /* Primary text / body typography */
+  --nord-5: #e5e9f0; /* Elevated / hover text */
+  --nord-6: #eceff4; /* Active / highlighted text */
 
-  --text: var(--rp-text);
-  --bg: var(--rp-base-alpha-bg);
-  --border: var(--rp-base);
-  --icon: var(--rp-love);
-  --memory: var(--rp-gold);
-  --cpu: var(--rp-rose);
-  --cpu-high-usage: var(--rp-love);
-  --battery: var(--rp-foam);
-  --battery-good: var(--rp-foam);
-  --battery-mid: var(--rp-gold);
-  --battery-low: var(--rp-love);
-  --media: var(--rp-iris);
-  --network: var(--rp-pine);
-  --rss: var(--rp-gold);
-  --ws-1: var(--rp-love);
-  --ws-2: var(--rp-gold);
-  --ws-3: var(--rp-rose);
-  --ws-4: var(--rp-pine);
-  --ws-5: var(--rp-foam);
-  --ws-6: var(--rp-iris);
-  --ws-7: var(--rp-love);
-  --ws-8: var(--rp-gold);
-  --ws-9: var(--rp-rose);
-  --weather: var(--rp-foam);
+  /* Frost: Accents and cold status indicators */
+  --nord-7: #8fbcbb; /* Teal - Network / success */
+  --nord-8: #88c0d0; /* Ice Blue - Standard icons / primary accent */
+  --nord-9: #81a1c1; /* Soft Blue - Secondary accents / memory stats */
+  --nord-10: #5e81ac; /* Deep Blue - Tertiary accents / battery base */
+
+  /* Aurora: Multi-color status indicators and alerts */
+  --nord-11: #bf616a; /* Red - Error / high CPU / battery low */
+  --nord-12: #d08770; /* Orange - Warning / RSS feed */
+  --nord-13: #ebcb8b; /* Yellow - Attention / battery mid */
+  --nord-14: #a3be8c; /* Green - Success / normal CPU / battery good */
+  --nord-15: #b48ead; /* Purple - Media / secondary actions */
+
+  /* ==========================================
+     Theme Mappings
+     ========================================== */
+  --text: var(--nord-4);
+  --bg: var(--nord-0);
+  --border: var(--nord-2);
+  --icon: var(--nord-8);
+  --memory: var(--nord-9);
+  --cpu: var(--nord-14);
+  --cpu-high-usage: var(--nord-11);
+  --battery: var(--nord-10);
+  --battery-good: var(--nord-14);
+  --battery-mid: var(--nord-13);
+  --battery-low: var(--nord-11);
+  --media: var(--nord-15);
+  --network: var(--nord-7);
+  --rss: var(--nord-12);
+  --weather: var(--nord-8);
+
+  /* Workspaces (Spectrum starting with Frost into Aurora) */
+  --ws-1: var(--nord-8);  /* Ice Blue */
+  --ws-2: var(--nord-9);  /* Soft Blue */
+  --ws-3: var(--nord-10); /* Deep Blue */
+  --ws-4: var(--nord-7);  /* Teal */
+  --ws-5: var(--nord-14); /* Green */
+  --ws-6: var(--nord-13); /* Yellow */
+  --ws-7: var(--nord-12); /* Orange */
+  --ws-8: var(--nord-11); /* Red */
+  --ws-9: var(--nord-15); /* Purple */
+
+  /* Base background color for active text contrast */
+  --base: var(--nord-0);
+  --rp-base: var(--nord-0); /* Fallback */
 }
 
 @theme {

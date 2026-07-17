@@ -56,7 +56,7 @@ function Komorebi() {
                     workspace.name === "8",
                   "text-[var(--ws-9)] border-[var(--ws-9)] group-[.focused]:bg-[var(--ws-9)]":
                     workspace.name === "9",
-                  "text-[var(--rp-base)]":
+                  "text-[var(--base)]":
                     workspace.focusedContainerIndex === idx(),
                 }
               )}

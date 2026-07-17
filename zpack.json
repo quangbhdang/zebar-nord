@@ -1,21 +1,21 @@
 {
   "$schema": "https://github.com/glzr-io/zebar/raw/v3.0.0/resources/zpack-schema.json",
-  "name": "rose-pine-aqua",
+  "name": "nord",
   "version": "1.0.0",
-  "description": "Rosé Pine topbar with green-aqua nature colors — clickable monitoring widgets open btm system monitor",
+  "description": "Nord theme topbar for Zebar — clickable monitoring widgets open btm system monitor",
   "tags": [
     "topbar",
     "glazewm",
-    "rose-pine",
-    "aqua",
-    "green",
-    "nature"
+    "nord",
+    "arctic",
+    "north-bluish",
+    "minimal"
   ],
   "previewImages": [
     "./resources/preview-image-1.png",
     "./resources/preview-image-2.png"
   ],
-  "repositoryUrl": "https://github.com/mtico/zebar-rose-pine-aqua",
+  "repositoryUrl": "https://github.com/quangbhdang/zebar-nord",
   "widgets": [
     {
       "name": "glazewm",

@@ -1,21 +1,24 @@
 <p align="center">
-    <img src="https://github.com/rose-pine/rose-pine-theme/raw/main/assets/icon.png" width="80" />
-    <h2 align="center">Zebar Rosé Pine++</h2>
+    <img src="https://raw.githubusercontent.com/nordtheme/nord/main/assets/nord-logo.png" width="80" alt="Nord Logo" />
+    <h2 align="center">Zebar Nord</h2>
 </p>
 
 <p align="center">
-A fully featured topbar derived from the beautiful <a href="https://rosepinetheme.com/">Rosé Pine</a> theme, built for <a href="https://github.com/glzr-io/zebar">Zebar</a> - the modern desktop widget platform.
+A fully featured topbar styled with the beautiful, arctic <a href="https://www.nordtheme.com/">Nord</a> theme, built for <a href="https://github.com/glzr-io/zebar">Zebar</a> - the modern desktop widget platform.
 </p>
 
 <p align="center">
-    <a href="https://github.com/rose-pine/rose-pine-theme">
-        <img src="https://img.shields.io/badge/community-rosé%20pine-26233a?labelColor=191724&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjIzNyIgdmlld0JveD0iMCAwIDI1MCAyMzciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xNjEuMjI3IDE2MS4yNTFDMTMyLjE1NCAxNjkuMDQxIDExNC45MDEgMTk4LjkyNCAxMjIuNjkxIDIyNy45OTdDMTIzLjkyNSAyMzIuNjAzIDEyOC42NTkgMjM1LjMzNiAxMzMuMjY0IDIzNC4xMDJMMTg1LjkwNyAyMTkuOTk2QzIxOS41ODUgMjEwLjk3MiAyMzkuNTcgMTc2LjM1NCAyMzAuNTQ2IDE0Mi42NzdMMTYxLjIyNyAxNjEuMjUxWiIgZmlsbD0iIzI0NjI3QiIvPgo8cGF0aCBkPSJNODguMTgzNiAxNTkuOTg4QzExNy4yNTcgMTY3Ljc3OCAxMzQuNTEgMTk3LjY2MiAxMjYuNzIgMjI2LjczNUMxMjUuNDg2IDIzMS4zNCAxMjAuNzUyIDIzNC4wNzMgMTE2LjE0NyAyMzIuODM5TDYzLjUwNDEgMjE4LjczM0MyOS44MjY0IDIwOS43MSA5Ljg0MDk0IDE3NS4wOTIgMTguODY0OSAxNDEuNDE0TDg4LjE4MzYgMTU5Ljk4OFoiIGZpbGw9IiMyNDYyN0IiLz4KPHBhdGggZD0iTTE4Ni44NjcgMTcyLjk4QzE1Mi4wMDIgMTcyLjk4IDEyMy43MzcgMjAxLjI0NSAxMjMuNzM3IDIzNi4xMTFIMTg2Ljg3QzIyMS43MzYgMjM2LjExMSAyNTAgMjA3Ljg0NiAyNTAgMTcyLjk4TDE4Ni44NjcgMTcyLjk4WiIgZmlsbD0iIzMxNzQ4RiIvPgo8cGF0aCBkPSJNNjMuMTMyNyAxNzIuOThDOTcuOTk4NCAxNzIuOTggMTI2LjI2MyAyMDEuMjQ1IDEyNi4yNjMgMjM2LjExMUg2My4xM0MyOC4yNjQyIDIzNi4xMTEgLTEuNTI0MDNlLTA2IDIwNy44NDYgMCAxNzIuOThMNjMuMTMyNyAxNzIuOThaIiBmaWxsPSIjMzE3NDhGIi8+CjxwYXRoIGQ9Ik0xNzEuNzE3IDc1LjEyNjNDMTcxLjcxNyAxMDEuMjc2IDE1MC41MTggMTIyLjQ3NSAxMjQuMzY5IDEyMi40NzVDOTguMjE4OCAxMjIuNDc1IDc3LjAyMDIgMTAxLjI3NiA3Ny4wMjAyIDc1LjEyNjNDNzcuMDIwMiA0OC45NzY0IDk4LjIxODggMjcuNzc3OCAxMjQuMzY5IDI3Ljc3NzhDMTUwLjUxOCAyNy43Nzc4IDE3MS43MTcgNDguOTc2NCAxNzEuNzE3IDc1LjEyNjNaIiBmaWxsPSIjRUJCQ0JBIi8+CjxwYXRoIGQ9Ik0xNDQuMjE3IDg2LjIzNzlDMTYxLjY0OSA1Ni4wNDMyIDE1MS4zMDMgMTcuNDMyOSAxMjEuMTA4IDBMMTA2LjA2IDI2LjA2NDRDODguNjI3IDU2LjI1OSA5OC45NzM2IDk0Ljg2OTQgMTI5LjE2OCAxMTIuMzAyTDE0NC4yMTcgODYuMjM3OVoiIGZpbGw9IiNFQkJDQkEiLz4KPHBhdGggZD0iTTEyNS4yOTkgNjAuOTc4OUMxMTYuMjc1IDI3LjMwMTIgODEuNjU3NSA3LjMxNTY3IDQ3Ljk3OTcgMTYuMzM5Nkw2NC4zMTk3IDc3LjMyMTFDNzMuMzQzNiAxMTAuOTk5IDEwNy45NjEgMTMwLjk4NCAxNDEuNjM5IDEyMS45NkwxMjUuMjk5IDYwLjk3ODlaIiBmaWxsPSIjRUJCQ0JBIi8+CjxwYXRoIGQ9Ik0xMjQuOTI2IDYwLjk3ODlDMTMzLjk1IDI3LjMwMTIgMTY4LjU2NyA3LjMxNTY3IDIwMi4yNDUgMTYuMzM5NkwxODUuOTA1IDc3LjMyMTFDMTc2Ljg4MSAxMTAuOTk5IDE0Mi4yNjMgMTMwLjk4NCAxMDguNTg2IDEyMS45NkwxMjQuOTI2IDYwLjk3ODlaIiBmaWxsPSIjRUJCQ0JBIi8+Cjwvc3ZnPgo=&style=for-the-badge" />
+    <a href="https://www.nordtheme.com/">
+        <img src="https://img.shields.io/badge/theme-nord-5e81ac?style=for-the-badge" alt="Nord Theme" />
     </a>
 </p>
 
+> [!NOTE]
+> This project is a fork of [zebar-rose-pine-aqua](https://github.com/Marianinpb/zebar-rose-pine-aqua) which only modifies the theme to use **Nord**.
+
 ## ✨ Features
 
-- **🎨 Rosé Pine Theme**: Beautiful color palette inspired by the popular Rosé Pine theme
+- **🎨 Nord Theme**: Beautiful color palette inspired by the popular, arctic Nord theme
 - **🖥️ Multi-Window Manager Support**: Compatible with GlazeWM, Komorebi, and vanilla window managers
 - **📊 System Monitoring**: Real-time CPU, memory, battery, and network statistics
 - **🎵 Media Controls**: Integrated media player controls with playback information
@@ -45,8 +48,8 @@ A fully featured topbar derived from the beautiful <a href="https://rosepinethem
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/m4rshe1/zebar-rose-pine-pp.git
-cd zebar-rose-pine-pp
+git clone https://github.com/quangbhdang/zebar-nord.git
+cd zebar-nord
 ```
 
 2. **Install dependencies**
@@ -83,7 +86,7 @@ npm run build
 ### Project Structure
 
 ```
-zebar-rose-pine-pp/
+zebar-nord/
 ├── dist/
 │   ├── glazewm/                    # dist folder for GlazeWM
 │   ├── komorebi/                   # dist folder for Komorebi
@@ -116,20 +119,28 @@ zebar-rose-pine-pp/
 
 ## 🎨 Customization
 
-The theme uses Tailwind CSS for styling, making it easy to customize colors, spacing, and layout. The main color palette follows the Rosé Pine theme:
+The theme uses Tailwind CSS for styling, making it easy to customize colors, spacing, and layout. The main color palette follows the official Nord theme guidelines:
 
-- **Base**: `#191724` (background)
-- **Surface**: `#1f1d2e` (surface elements)
-- **Overlay**: `#26233a` (overlays)
-- **Muted**: `#6e6a86` (muted text)
-- **Subtle**: `#908caa` (subtle text)
-- **Text**: `#e0def4` (primary text)
-- **Love**: `#eb6f92` (accent)
-- **Gold**: `#f6c177` (warning)
-- **Rose**: `#ebbcba` (info)
-- **Pine**: `#31748f` (success)
-- **Foam**: `#9ccfd8` (highlight)
-- **Iris**: `#c4a7e7` (secondary)
+- **Polar Night** (Dark theme base and backgrounds):
+  - `nord0` (`#2e3440`): Primary background
+  - `nord1` (`#3b4252`): Elevated widgets background
+  - `nord2` (`#434c5e`): Borders and selections
+  - `nord3` (`#4c566a`): Muted text and comments
+- **Snow Storm** (Typography and highlights):
+  - `nord4` (`#d8dee9`): Base text color
+  - `nord5` (`#e5e9f0`): Hover/elevated text
+  - `nord6` (`#eceff4`): Active / bold text
+- **Frost** (Accents and active states):
+  - `nord7` (`#8fbcbb`): Teal Frost (network status)
+  - `nord8` (`#88c0d0`): Ice Blue Frost (primary icons)
+  - `nord9` (`#81a1c1`): Soft Blue Frost (memory usage)
+  - `nord10` (`#5e81ac`): Deep Blue Frost (battery status)
+- **Aurora** (Status colors and alerts):
+  - `nord11` (`#bf616a`): Red Aurora (high CPU, low battery)
+  - `nord12` (`#d08770`): Orange Aurora (RSS feed)
+  - `nord13` (`#ebcb8b`): Yellow Aurora (battery mid-charge)
+  - `nord14` (`#a3be8c`): Green Aurora (battery good, low CPU)
+  - `nord15` (`#b48ead`): Purple Aurora (media playback)
 
 ## 🤝 Contributing
 
@@ -141,7 +152,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [Rosé Pine Theme](https://rosepinetheme.com/) for the beautiful color palette
+- [Nord Theme](https://www.nordtheme.com/) for the beautiful color palette
+- [zebar-rose-pine-aqua](https://github.com/Marianinpb/zebar-rose-pine-aqua) for the original codebase
 - [Zebar](https://github.com/glzr-io/zebar) for the amazing desktop widget platform
 - [SolidJS](https://solidjs.com) for the reactive framework
 - [Tailwind CSS](https://tailwindcss.com) for the utility-first CSS framework
@@ -149,9 +161,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔗 Links
 
 - [Zebar Documentation](https://github.com/glzr-io/zebar)
-- [Rosé Pine Theme](https://rosepinetheme.com/)
+- [Nord Theme Color Palette](https://www.nordtheme.com/docs/colors-and-palettes)
 - [SolidJS Documentation](https://solidjs.com)
-- [Issues](https://github.com/m4rshe1/zebar-rose-pine-pp/issues)
+- [Original Repo (rose-pine-aqua)](https://github.com/Marianinpb/zebar-rose-pine-aqua)
+- [Issues](https://github.com/quangbhdang/zebar-nord/issues)
 
 ---
 
