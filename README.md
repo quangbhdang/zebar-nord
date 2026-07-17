@@ -29,8 +29,7 @@ A fully featured topbar styled with the beautiful, arctic <a href="https://www.n
 ## 🖼️ Preview
 
 <div align="center">
-  <img src="resources/preview-image-1.png" alt="Zebar Rose Pine ++ Preview 1" width="800"/>
-  <img src="resources/preview-image-2.png" alt="Zebar Rose Pine ++ Preview 2" width="800"/>
+  <img src="resources/preview-image.png" alt="Zebar Nord Preview" width="800"/>
 </div>
 
 ## 🚀 Quick Start

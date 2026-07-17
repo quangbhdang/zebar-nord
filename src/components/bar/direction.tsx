@@ -20,7 +20,7 @@ function Direction() {
         )}
         onClick={() => glazewm()?.runCommand(`toggle-tiling-direction`)}
       >
-        <i class="nf nf-md-flower_tulip text-lg"></i>
+        <i class="nf nf-md-lighthouse text-lg"></i>
       </button>
     </Show>
   );
