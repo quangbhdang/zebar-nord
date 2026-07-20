@@ -1,7 +1,7 @@
 {
   "$schema": "https://github.com/glzr-io/zebar/raw/v3.0.0/resources/zpack-schema.json",
   "name": "nord",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Nord theme topbar for Zebar — clickable monitoring widgets open btm system monitor",
   "tags": [
     "topbar",
