@@ -20,11 +20,55 @@ function Vpn() {
   });
 
   const checkVpn = async () => {
-    try {
-      // Running 'ipconfig.exe' is extremely fast (<10ms) and uses almost zero CPU
-      // compared to starting a heavy PowerShell instance.
-      const result = await shellExec("ipconfig.exe");
+    // 1. Try native Zebar network provider interfaces (in-memory, 0ms latency, zero CPU)
+    const net = network();
+    if (net && net.interfaces && net.interfaces.length > 0) {
+      let tailscale = false;
+      let vpn = false;
+      let name = "";
 
+      for (const iface of net.interfaces) {
+        const label = `${iface.name || ""} ${iface.friendlyName || ""} ${iface.description || ""}`;
+
+        const isTailscale = /Tailscale/i.test(label);
+        const isVpnKeyword =
+          /VPN|TAP|TUN|WireGuard|Cisco|GlobalProtect|Fortinet|AnyConnect|OpenVPN/i.test(
+            label
+          );
+
+        if (isTailscale || isVpnKeyword) {
+          const validIps = (iface.ipv4Addresses || []).filter(
+            (ip) => ip && !ip.startsWith("169.254.") && ip !== "0.0.0.0"
+          );
+
+          if (validIps.length > 0) {
+            if (isTailscale) {
+              tailscale = true;
+              if (!name) name = "Tailscale";
+            } else {
+              vpn = true;
+              if (!name || name === "Tailscale") {
+                name = iface.friendlyName || iface.name || "VPN";
+              }
+            }
+          }
+        }
+      }
+
+      if (tailscale || vpn) {
+        setStatus({
+          connected: true,
+          tailscale,
+          vpn,
+          name,
+        });
+        return;
+      }
+    }
+
+    // 2. Fallback check using ipconfig.exe if provider array was empty or didn't match
+    try {
+      const result = await shellExec("ipconfig.exe");
       if (result && result.stdout) {
         const sections = result.stdout.split(/\r?\n\r?\n/);
         let tailscale = false;
@@ -35,17 +79,18 @@ function Vpn() {
           const lines = section.split(/\r?\n/);
           if (lines.length === 0) continue;
 
-          // Match adapter headers: e.g. "Ethernet adapter Tailscale:" or "PPP adapter WorkVPN:"
           const headerMatch = lines[0].match(
-            /^(?:Ethernet adapter|Wireless LAN adapter|Tunnel adapter|PPP adapter)\s+(.*?):$/i
+            /^(?:Ethernet adapter|Wireless LAN adapter|Tunnel adapter|PPP adapter|Carte|Adaptador|以太网适配器)\s+(.*?):$/i
           );
-          if (!headerMatch) continue;
 
-          const adapterName = headerMatch[1].trim();
+          const adapterName = headerMatch ? headerMatch[1].trim() : lines[0];
 
-          const isTailscale = /Tailscale/i.test(adapterName);
+          const isTailscale = /Tailscale/i.test(section) || /Tailscale/i.test(adapterName);
           const isVpnKeyword =
-            /VPN|TAP|TUN|WireGuard|Cisco|GlobalProtect|Fortinet|AnyConnect/i.test(
+            /VPN|TAP|TUN|WireGuard|Cisco|GlobalProtect|Fortinet|AnyConnect|OpenVPN/i.test(
+              section
+            ) ||
+            /VPN|TAP|TUN|WireGuard|Cisco|GlobalProtect|Fortinet|AnyConnect|OpenVPN/i.test(
               adapterName
             );
 
@@ -54,11 +99,13 @@ function Vpn() {
             let isDisconnected = false;
 
             for (const line of lines) {
-              if (/Media State/i.test(line) && /disconnected/i.test(line)) {
+              if (
+                /Media State|Medienstatus|Statut du média|Estado de los medios/i.test(line) &&
+                /disconnected|getrennt|déconnecté|desconectado/i.test(line)
+              ) {
                 isDisconnected = true;
               }
-              if (/IPv4 Address/i.test(line)) {
-                // Filter out self-assigned APIPA addresses (169.254.x.x)
+              if (/IPv4/i.test(line) && /:\s*\d+\.\d+\.\d+\.\d+/.test(line)) {
                 if (!/: 169\.254\./.test(line)) {
                   hasIp = true;
                 }
@@ -83,21 +130,30 @@ function Vpn() {
           vpn,
           name,
         });
+        return;
       }
     } catch (err) {
-      console.warn("VPN status check failed:", err);
+      console.warn("VPN status ipconfig fallback check failed:", err);
     }
+
+    // If no VPN detected
+    setStatus({
+      connected: false,
+      tailscale: false,
+      vpn: false,
+      name: "",
+    });
   };
 
   createEffect(() => {
-    // React to any network state changes from the Zebar network provider
+    // React to network updates from Zebar
     network();
     checkVpn();
   });
 
   createEffect(() => {
-    // Backup poll every 30 seconds for state changes not captured by the network provider
-    const interval = setInterval(checkVpn, 30000);
+    // Fallback poll every 15 seconds
+    const interval = setInterval(checkVpn, 15000);
     onCleanup(() => clearInterval(interval));
   });
 
@@ -108,6 +164,7 @@ function Vpn() {
           "h-8 flex items-center transition-all duration-300 justify-center overflow-hidden gap-2 text-[var(--vpn)] bg-[var(--vpn)]/10 rounded-full px-3 relative cursor-pointer"
         )}
         title={status().name || (status().tailscale ? "Tailscale Connected" : "VPN Connected")}
+        onClick={checkVpn}
       >
         <Show
           when={status().tailscale}

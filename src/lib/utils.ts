@@ -16,3 +16,9 @@ export function validateOptions<T extends z.ZodTypeAny>(
   }
   return result.data;
 }
+
+export function openBtop(glazewm?: { runCommand: (cmd: string) => Promise<any> } | null) {
+  if (!glazewm) return;
+  // Dynamically uses %LOCALAPPDATA% or PATH so it works for all users without hardcoding username paths
+  glazewm.runCommand('shell-exec wt %LOCALAPPDATA%\\Microsoft\\WinGet\\Links\\btop.exe || wt btop');
+}

@@ -20,7 +20,7 @@ A fully featured topbar styled with the beautiful, arctic <a href="https://www.n
 
 - **🎨 Nord Theme**: Beautiful color palette inspired by the popular, arctic Nord theme
 - **🖥️ Multi-Window Manager Support**: Compatible with GlazeWM, Komorebi, and vanilla window managers
-- **📊 System Monitoring**: Real-time CPU, memory, battery, network, and VPN/Tailscale connection status
+- **📊 System Monitoring & btop Integration**: Real-time CPU, memory, battery, network, and VPN/Tailscale status. Click CPU, Memory, or Network widgets to launch **btop** in Windows Terminal (`wt`).
 - **🎵 Media Controls**: Integrated media player controls with playback information
 - **🕐 Smart Clock**: Elegant date and time display
 - **⚡ Performance Optimized**: Built with SolidJS for blazing fast performance
@@ -39,6 +39,7 @@ A fully featured topbar styled with the beautiful, arctic <a href="https://www.n
 - [Zebar](https://github.com/glzr-io/zebar) v3.0.0 or higher
 - Node.js 21+ and npm/pnpm/yarn
 - A supported window manager (GlazeWM, Komorebi, or None/Vanilla)
+- *(Optional)* [btop](https://github.com/aristocratos/btop) and [Windows Terminal](https://github.com/microsoft/terminal) for clicking CPU/Memory/Network widgets to open detailed system monitoring.
 
 ### Installation
 

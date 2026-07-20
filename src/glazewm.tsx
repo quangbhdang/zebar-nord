@@ -40,15 +40,27 @@ const defaultLayout: Layout = {
           options: {
             feeds: [
               {
-                url: "https://hnrss.org/frontpage",
+                url: "https://papers.takara.ai/api/feed",
                 maxItems: 20,
-                maxAge: 7,
-                useCorsProxy: false,
+                maxAge: 3,
+                useCorsProxy: true,
               },
               {
-                url: "https://www.reddit.com/r/programming/.rss",
-                maxItems: 40,
-                maxAge: 14,
+                url: "https://arxiv.org/rss/cs.LG",
+                maxItems: 20,
+                maxAge: 3,
+                useCorsProxy: true,
+              },
+              {
+                url: "https://cvefeed.io/rssfeed/severity/high.xml",
+                maxItems: 20,
+                maxAge: 3,
+                useCorsProxy: true,
+              },
+              {
+                url: "https://pypi.org/rss/updates.xml",
+                maxItems: 20,
+                maxAge: 3,
                 useCorsProxy: true,
               },
             ],

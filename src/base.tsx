@@ -72,9 +72,14 @@ const Base = (props: {
   };
 
   const onStorage = () => {
-    props.setLayout(
-      JSON.parse(localStorage.getItem(`zrp:layout:${props.wm}`) ?? "")
-    );
+    try {
+      const saved = localStorage.getItem(`zrp:layout:${props.wm}`);
+      if (saved) {
+        props.setLayout(JSON.parse(saved));
+      }
+    } catch (err) {
+      console.error("Failed to parse layout from storage:", err);
+    }
   };
 
   onMount(() => {

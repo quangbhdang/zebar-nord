@@ -34,14 +34,16 @@ export type RssOptions = {
 };
 
 export const RssSchema = z.object({
-  feeds: z.array(
-    z.object({
-      url: z.string(),
-      maxItems: z.number().optional(),
-      maxAge: z.number().optional(),
-      useCorsProxy: z.boolean().optional(),
-    })
-  ),
+  feeds: z
+    .array(
+      z.object({
+        url: z.string(),
+        maxItems: z.number().optional(),
+        maxAge: z.number().optional(),
+        useCorsProxy: z.boolean().optional(),
+      })
+    )
+    .optional(),
   refreshInterval: z.number().optional(),
   maxItemsPerFeed: z.number().optional(),
   titleLength: z.number().optional(),
@@ -154,7 +156,14 @@ export async function fetchFeed(
 }
 
 export default function Rss(props: { options?: { [key: string]: any } }) {
-  const options = () => validateOptions(props.options ?? {}, RssSchema);
+  const options = () => {
+    try {
+      return validateOptions(props.options ?? {}, RssSchema);
+    } catch (err) {
+      console.error("Failed to validate RSS options, using fallback:", err);
+      return {};
+    }
+  };
   const [items, setItems] = createSignal<RssItem[]>([]);
   const [seen, setSeen] = createSignal<Set<string>>(loadSeen());
 

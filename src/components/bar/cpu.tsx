@@ -1,4 +1,4 @@
-import { cn } from "../../lib/utils";
+import { cn, openBtop } from "../../lib/utils";
 import { Show, createEffect, createSignal } from "solid-js";
 import { useProviders } from "../../lib/providers-context";
 
@@ -13,7 +13,7 @@ function Cpu() {
         class={cn(
           "h-8 flex group items-center justify-center overflow-hidden gap-2 text-[var(--cpu)] bg-[var(--cpu)]/10 rounded-full pr-3 pl-4 relative cursor-pointer"
         )}
-        onClick={() => glazewm()?.runCommand('shell-exec wt "C:\\Users\\anda3\\AppData\\Local\\Microsoft\\WinGet\\Links\\btop.exe"')}
+        onClick={() => openBtop(glazewm())}
       >
         <i class="nf nf-oct-cpu text-lg"></i>
         <div class="w-12 h-2 bg-[var(--cpu)]/40 rounded-full relative overflow-hidden group-hover:translate-y-6 group-hover:opacity-0 transition-all duration-300">

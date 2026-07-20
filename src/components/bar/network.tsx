@@ -1,4 +1,4 @@
-import { cn } from "../../lib/utils";
+import { cn, openBtop } from "../../lib/utils";
 import { Match, Switch } from "solid-js/web";
 import { Show, createEffect, createSignal } from "solid-js";
 import { useProviders } from "../../lib/providers-context";
@@ -39,7 +39,7 @@ function Network() {
           getNetworkType() === "ethernet" ? "" : "group",
           "items-center justify-center overflow-hidden gap-2 text-[var(--network)] bg-[var(--network)]/10 rounded-full px-2 relative cursor-pointer"
         )}
-        onClick={() => glazewm()?.runCommand('shell-exec wt "C:/Users/anda3/AppData/Local/Microsoft/WinGet/Links/btop.exe"')}
+        onClick={() => openBtop(glazewm())}
       >
         <Switch>
           <Match when={getNetworkType() === "ethernet"}>
