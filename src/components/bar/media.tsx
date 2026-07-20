@@ -1,22 +1,72 @@
 import { cn } from "../../lib/utils";
-import { Match, Show, Switch, createEffect, createSignal } from "solid-js";
+import { Match, Show, Switch, createEffect, createMemo, createSignal } from "solid-js";
 import { useProviders } from "../../lib/providers-context";
+import type { MediaSession } from "zebar";
+
+function isValidSession(s: MediaSession | null | undefined): boolean {
+  if (!s) return false;
+  const title = s.title?.trim();
+  const artist = s.artist?.trim();
+  // A session must have at least a non-empty title or artist
+  return Boolean(title || artist);
+}
 
 function Media() {
   const { media } = useProviders();
   const [mediaSig, setMediaSig] = createSignal(media());
   createEffect(() => setMediaSig(media()));
 
-  // Retrieve the active media session safely.
-  // Prefers currently playing session from allSessions if currentSession is paused or null.
-  const session = () => {
+  // Sticky session locking to prevent rapid flickering when hovering over YouTube thumbnails/players
+  const [lockedSessionId, setLockedSessionId] = createSignal<string | null>(null);
+
+  const session = createMemo(() => {
     const m = mediaSig();
     if (!m) return null;
-    if (m.currentSession?.isPlaying) return m.currentSession;
-    const playing = m.allSessions?.find((s) => s.isPlaying);
-    if (playing) return playing;
-    return m.currentSession || (m.allSessions?.length ? m.allSessions[0] : null);
-  };
+
+    const all = m.allSessions || [];
+    const validSessions = all.filter(isValidSession);
+
+    // 1. If currently locked onto a valid session, stick with it unless it stopped and another is playing
+    const currentLockedId = lockedSessionId();
+    if (currentLockedId) {
+      const lockedMatch = validSessions.find((s) => s.sessionId === currentLockedId);
+      if (lockedMatch) {
+        const anotherPlaying = validSessions.find(
+          (s) => s.sessionId !== currentLockedId && s.isPlaying
+        );
+        // Only switch away from lockedMatch if it is paused AND another session is playing
+        if (!anotherPlaying || lockedMatch.isPlaying) {
+          return lockedMatch;
+        }
+      }
+    }
+
+    // 2. Otherwise pick current playing session
+    if (m.currentSession && isValidSession(m.currentSession) && m.currentSession.isPlaying) {
+      setLockedSessionId(m.currentSession.sessionId);
+      return m.currentSession;
+    }
+
+    const playing = validSessions.find((s) => s.isPlaying);
+    if (playing) {
+      setLockedSessionId(playing.sessionId);
+      return playing;
+    }
+
+    // 3. Fallback to currentSession or first valid session
+    const fallback =
+      (m.currentSession && isValidSession(m.currentSession) ? m.currentSession : null) ||
+      validSessions[0] ||
+      null;
+
+    if (fallback) {
+      setLockedSessionId(fallback.sessionId);
+    } else {
+      setLockedSessionId(null);
+    }
+
+    return fallback;
+  });
 
   const isPlaying = () => Boolean(session()?.isPlaying);
 
